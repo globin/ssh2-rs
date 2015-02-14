@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Sftp` struct in crate `ssh2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Sftp">
+
+    <title>ssh2::Sftp - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>ssh2</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Agent.html' title='A structure representing a connection to an SSH agent.'>Agent</a><a class='struct ' href='struct.Channel.html' title='A channel represents a portion of an SSH connection on which data can be read and written.'>Channel</a><a class='struct ' href='struct.Error.html' title='Representation of an error that can occur within libssh2'>Error</a><a class='struct ' href='struct.ExitSignal.html' title='Data received from when a program exits with a signal.'>ExitSignal</a><a class='struct ' href='struct.File.html' title='A file handle to an SFTP connection.'>File</a><a class='struct ' href='struct.FileStat.html' title='Metadata information about a remote file.'>FileStat</a><a class='struct ' href='struct.Host.html' title='Structure representing a known host as part of a `KnownHosts` structure.'>Host</a><a class='struct ' href='struct.Hosts.html' title='Iterator over the hosts in a `KnownHosts` structure.'>Hosts</a><a class='struct ' href='struct.Identities.html' title='An iterator over the identities found in an SSH agent.'>Identities</a><a class='struct ' href='struct.KnownHosts.html' title='A set of known hosts which can be used to verify the identity of a remote server.'>KnownHosts</a><a class='struct ' href='struct.Listener.html' title='A listener represents a forwarding port from the remote server.'>Listener</a><a class='struct ' href='struct.OpenFlags.html' title='Options that can be used to configure how a file is opened'>OpenFlags</a><a class='struct ' href='struct.PublicKey.html' title='A public key which is extracted from an SSH agent.'>PublicKey</a><a class='struct ' href='struct.ReadWindow.html' title='Description of the read window as returned by `Channel::read_window`'>ReadWindow</a><a class='struct ' href='struct.RenameFlags.html' title='Options to `Sftp::rename`'>RenameFlags</a><a class='struct ' href='struct.Session.html' title='An SSH session, typically representing one TCP connection.'>Session</a><a class='struct current' href='struct.Sftp.html' title='A handle to a remote filesystem over SFTP.'>Sftp</a><a class='struct ' href='struct.WriteWindow.html' title='Description of the write window as returned by `Channel::write_window`'>WriteWindow</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.CheckResult.html' title='Possible results of a call to `KnownHosts::check`'>CheckResult</a><a class='enum ' href='enum.DisconnectCode.html' title=''>DisconnectCode</a><a class='enum ' href='enum.HashType.html' title=''>HashType</a><a class='enum ' href='enum.HostKeyType.html' title=''>HostKeyType</a><a class='enum ' href='enum.KnownHostFileKind.html' title=''>KnownHostFileKind</a><a class='enum ' href='enum.KnownHostKeyFormat.html' title=''>KnownHostKeyFormat</a><a class='enum ' href='enum.MethodType.html' title=''>MethodType</a><a class='enum ' href='enum.OpenType.html' title='How to open a file handle with libssh2.'>OpenType</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.init.html' title='Initialize the libssh2 library.'>init</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>ssh2</a>::<wbr><a class='struct' href=''>Sftp</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-5571' href='../src/ssh2/sftp.rs.html#12-15'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Sftp&lt;'sess&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>A handle to a remote filesystem over SFTP.</p>
+
+<p>Instances are created through the <code>sftp</code> method on a <code>Session</code>.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'sess&gt; <a class='struct' href='../ssh2/struct.Sftp.html' title='ssh2::Sftp'>Sftp</a>&lt;'sess&gt;</code></h3><div class='impl-items'><h4 id='method.open_mode' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.open_mode' class='fnname'>open_mode</a>(&amp;self, filename: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, flags: <a class='struct' href='../ssh2/struct.OpenFlags.html' title='ssh2::OpenFlags'>OpenFlags</a>, mode: <a class='struct' href='http://doc.rust-lang.org/nightly/std/old_io/struct.FilePermission.html' title='std::old_io::FilePermission'>FilePermission</a>, open_type: <a class='enum' href='../ssh2/enum.OpenType.html' title='ssh2::OpenType'>OpenType</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../ssh2/struct.File.html' title='ssh2::File'>File</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Open a handle to a file.</p>
+</div><h4 id='method.open' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.open' class='fnname'>open</a>(&amp;self, filename: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../ssh2/struct.File.html' title='ssh2::File'>File</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Helper to open a file in the <code>Read</code> mode.</p>
+</div><h4 id='method.create' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.create' class='fnname'>create</a>(&amp;self, filename: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../ssh2/struct.File.html' title='ssh2::File'>File</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Helper to create a file in write-only mode with truncation.</p>
+</div><h4 id='method.opendir' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.opendir' class='fnname'>opendir</a>(&amp;self, dirname: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../ssh2/struct.File.html' title='ssh2::File'>File</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Helper to open a directory for reading its contents.</p>
+</div><h4 id='method.readdir' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.readdir' class='fnname'>readdir</a>(&amp;self, dirname: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, <a class='struct' href='../ssh2/struct.FileStat.html' title='ssh2::FileStat'>FileStat</a>)</a>&gt;, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Convenience function to read the files in a directory.</p>
+
+<p>The returned paths are all joined with <code>dirname</code> when returned, and the
+paths <code>.</code> and <code>..</code> are filtered out of the returned list.</p>
+</div><h4 id='method.mkdir' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.mkdir' class='fnname'>mkdir</a>(&amp;self, filename: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, mode: <a class='struct' href='http://doc.rust-lang.org/nightly/std/old_io/struct.FilePermission.html' title='std::old_io::FilePermission'>FilePermission</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create a directory on the remote file system.</p>
+</div><h4 id='method.rmdir' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.rmdir' class='fnname'>rmdir</a>(&amp;self, filename: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Remove a directory from the remote file system.</p>
+</div><h4 id='method.stat' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.stat' class='fnname'>stat</a>(&amp;self, filename: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../ssh2/struct.FileStat.html' title='ssh2::FileStat'>FileStat</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Get the metadata for a file, performed by stat(2)</p>
+</div><h4 id='method.lstat' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.lstat' class='fnname'>lstat</a>(&amp;self, filename: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../ssh2/struct.FileStat.html' title='ssh2::FileStat'>FileStat</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Get the metadata for a file, performed by lstat(2)</p>
+</div><h4 id='method.setstat' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.setstat' class='fnname'>setstat</a>(&amp;self, filename: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, stat: <a class='struct' href='../ssh2/struct.FileStat.html' title='ssh2::FileStat'>FileStat</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Set the metadata for a file.</p>
+</div><h4 id='method.symlink' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.symlink' class='fnname'>symlink</a>(&amp;self, path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, target: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create a symlink at <code>target</code> pointing at <code>path</code>.</p>
+</div><h4 id='method.readlink' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.readlink' class='fnname'>readlink</a>(&amp;self, path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Read a symlink at <code>path</code>.</p>
+</div><h4 id='method.realpath' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.realpath' class='fnname'>realpath</a>(&amp;self, path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Resolve the real path for <code>path</code>.</p>
+</div><h4 id='method.rename' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.rename' class='fnname'>rename</a>(&amp;self, src: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, dst: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/old_path/posix/struct.Path.html' title='std::old_path::posix::Path'>Path</a>, flags: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../ssh2/struct.RenameFlags.html' title='ssh2::RenameFlags'>RenameFlags</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Rename a filesystem object on the remote filesystem.</p>
+
+<p>The semantics of this command typically include the ability to move a
+filesystem object between folders and/or filesystem mounts. If the
+<code>Overwrite</code> flag is not set and the destfile entry already exists, the
+operation will fail.</p>
+
+<p>Use of the other flags (Native or Atomic) indicate a preference (but
+not a requirement) for the remote end to perform an atomic rename
+operation and/or using native system calls when possible.</p>
+
+<p>If no flags are specified then all flags are used.</p>
+</div><h4 id='method.last_error' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.last_error' class='fnname'>last_error</a>(&amp;self) -&gt; <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a></code></h4>
+<div class='docblock'><p>Peel off the last error to happen on this SFTP instance.</p>
+</div><h4 id='method.rc' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.rc' class='fnname'>rc</a>(&amp;self, rc: <a class='type' href='http://doc.rust-lang.org/nightly/libc/types/os/arch/c95/type.c_int.html' title='libc::types::os::arch::c95::c_int'>c_int</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../ssh2/struct.Error.html' title='ssh2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Translates a return code into a Rust-<code>Result</code></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl&lt;'sess&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../ssh2/struct.Sftp.html' title='ssh2::Sftp'>Sftp</a>&lt;'sess&gt;</code></h3><div class='impl-items'><h4 id='method.drop' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "ssh2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
